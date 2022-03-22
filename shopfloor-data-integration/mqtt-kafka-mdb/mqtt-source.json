@@ -1,0 +1,16 @@
+{"name": "mqtt-source",
+    "config": {
+        "connector.class"                                     : "io.confluent.connect.mqtt.MqttSourceConnector",
+        "tasks.max"                                           : "1",
+        "mqtt.server.uri"                                     : "ssl://< HIVEMQ URL >:8883",
+        "mqtt.topics"                                         : "factory/#",
+        "kafka.topic"                                         : "factory",
+        "value.converter"                                     : "org.apache.kafka.connect.converters.ByteArrayConverter",
+        "mqtt.username"                                       : "< MQTT USER >",
+        "mqtt.password"                                       : "< MQTT PASSWORD >",
+        "confluent.topic.bootstrap.servers"                   : "redpanda:9092", 
+        "confluent.license"                                   : "",
+        "topic.creation.enable"                               : true,
+        "topic.creation.default.replication.factor"           : -1,
+        "topic.creation.default.partitions"                   : -1
+}}
