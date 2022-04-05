@@ -3,7 +3,7 @@
         "connector.class"                                     : "io.confluent.connect.mqtt.MqttSourceConnector",
         "tasks.max"                                           : "1",
         "mqtt.server.uri"                                     : "ssl://< HIVEMQ URL >:8883",
-        "mqtt.topics"                                         : "factory/#",
+        "mqtt.topics"                                         : "i/alert",
         "kafka.topic"                                         : "factory",
         "value.converter"                                     : "org.apache.kafka.connect.converters.ByteArrayConverter",
         "mqtt.username"                                       : "< MQTT USER >",
