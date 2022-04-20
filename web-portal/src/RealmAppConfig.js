@@ -1,4 +1,4 @@
-exports.graphQLEnpoint = "<- YOUR REALM GRAPHQL ENDPOINT ->";
+exports.graphQLEnpoint = "https://eu-west-1.aws.realm.mongodb.com/api/client/v2.0/app/myiot-sxwcb/graphql";
 
-exports.realmAppID = "<- YOUR REALM APP ID ->";
+exports.realmAppID = "myiot-sxwcb";
 
