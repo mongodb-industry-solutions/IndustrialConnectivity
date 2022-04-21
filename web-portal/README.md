@@ -9,6 +9,7 @@ Follow the instructions to create your own Atlas cluster and Realm app and conne
 ## To install the app on localhost
 
 #### 1. Download repo code and any React development dependencies required for your OS.
+Dependencies include: node, yarn.
 We recommend Visual Studio Code to work on the project.
 
 #### 2. Create MongoDB Atlas Database
@@ -120,6 +121,11 @@ When the app is done installing without errors, run the react engine in localhos
 ```bash
 yarn start
 ```
+##### Error Troubleshooting
+- You may receive a package path error. This may be related to the version of node installed on your computer. The app works best with node version 16.14.0. Change the version of node using [this] (https://bytearcher.com/articles/ways-to-get-the-latest-node.js-version-on-a-mac/) guide.
+- Now run the npm install command again.
+- Run yarn start again.
+
 The app should open up in a browser window with the login page displayed.
 
 #### 10. Test the connection
