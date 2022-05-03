@@ -1,8 +1,11 @@
 # MQTT -> Kafka -> MongoDB Streaming
 
+Start Docker using:
+```sudo systemctl start docker```
+
 Run the integration:
 
-```docker-compose up -d --build```
+```docker compose up -d --build```
 
 RPK Cluster Info:
 
