@@ -2,14 +2,16 @@ import gql from "graphql-tag";
 
 export const GET_ORDERS = gql`
   query {
-    orders {
+    neworders {
       _id
-      address
+      ship_from
+      ship_to
       color
       userId
       firstName
       lastName
       orderStatus
+      timeStamp
     }
   }
 `;

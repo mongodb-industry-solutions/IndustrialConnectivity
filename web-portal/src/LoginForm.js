@@ -3,8 +3,6 @@ import React from "react";
 import * as Realm from "realm-web";
 import assert from "assert";
 
-import { Button, Form } from "react-bootstrap";
-
 export class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -48,7 +46,7 @@ export class LoginForm extends React.Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-
+    console.log(target.name + " " + target.value)
     this.setState({
       [name]: value,
     });
@@ -57,38 +55,17 @@ export class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              name="username"
-              onChange={this.handleInputChange}
-            />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              name="password"
-              onChange={this.handleInputChange}
-            />
-          </Form.Group>
-          <Button
-            size="sm"
-            variant="outline-success"
-            type="submit"
-            value="Login"
-          >
-            Login
-          </Button>
-        </Form>
-        <p class="error">{this.state.loginError}</p>
+        <form onSubmit={this.handleSubmit}>
+          <div class="mb-6">
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+            <input type="email" id="email" name="username" onChange={this.handleInputChange} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name.lastname@company.com" required/>
+          </div>
+          <div class="mb-6">
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
+            <input type="password" id="password" name="password" onChange={this.handleInputChange} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required/>
+          </div>
+          <button type="submit" value="Login" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
+        </form>
       </div>
     );
   }
