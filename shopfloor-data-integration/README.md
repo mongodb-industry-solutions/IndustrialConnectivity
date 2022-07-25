@@ -48,4 +48,4 @@ In this section you can find all the source code for our data streaming project 
 
 - In the Mqtt-source connector, bootstrap server = broker:9092
 
-- In the docker compose file, cp-kafka, we change Kafka Advertised listener to both broker:29092 and broker:9092.
+- In the docker compose file, cp-kafka, we change Kafka Advertised listener to both broker:29092 and broker:9092
