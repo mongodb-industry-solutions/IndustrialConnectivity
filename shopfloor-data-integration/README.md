@@ -23,7 +23,17 @@ The docker compose in this repository will create an environment that consists o
 - Apache Kafka Connect
 - MongoDB Connector for Apache Kafka (installed in Kafka Connect)
 - MongoDB single node replica set
- 
+
+### MQTT Bridge
+
+An MQTT bridge lets you connect two MQTT brokers together.
+
+>  Note : You must already have a remote broker connected to some devices via a bridge and have access details for that broker in order for this source code to work.
+
+To find a tutorial on how to set up an MQTT bridge:
+
+- [Bridge Tutorial](https://github.com/mongodb-industry-solutions/smart-factory/blob/main/web-portal/MQTT_Bridge_Configuration.md)
+
   
 
 # Starting the Docker environment
