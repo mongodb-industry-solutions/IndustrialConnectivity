@@ -16,7 +16,7 @@ In this section you can find all the source code for our data streaming project 
 ***Sink connector*** - Defines the destination of data collected through Kafka.
 
 
-# Prerequisits
+# Prerequisites
 
 In the sub-folder [Readme](https://github.com/mongodb-industry-solutions/smart-factory/tree/main/shopfloor-data-integration/mongodb-kafka-base), you will find the necessary commands to deploy the docker container which has the Kafka environment.
 
