@@ -7,18 +7,65 @@ In this section you can find all the source code for our data streaming project 
 
 ![](Img/arq.png?raw=true )
 
-# Bridges and Connectors #
-
-***MQTT Bridge*** - A MQTT bridge lets you connect two MQTT brokers together.
-
-***Source connector*** - Defines the origin of data to be collected through Kafka.
-
-***Sink connector*** - Defines the destination of data collected through Kafka.
-
 
 # Prerequisites
 
-In the sub-folder [Readme](https://github.com/mongodb-industry-solutions/smart-factory/tree/main/shopfloor-data-integration/mongodb-kafka-base), you will find the necessary commands to deploy the docker container which has the Kafka environment.
+  
+
+The MongoDB Kafka tutorial environment requires the following installed on your client:
+
+- [Docker](https://docs.docker.com/get-docker/)
+
+The docker compose in this repository will create an environment that consists of the following:
+
+- Apache Kafka
+- Zookeeper
+- Apache Kafka Connect
+- MongoDB Connector for Apache Kafka (installed in Kafka Connect)
+- MongoDB single node replica set
+ 
+  
+
+# Starting the Docker environment
+
+  
+
+To start the baseline tutorial environment execute the shell script `run.sh`.
+
+```sh run.sh```
+
+  
+
+> Note: If you are using a Windows OS, execute the `run.ps1` script a Powershell environment.
+  
+
+Once the environment is running, you can use locally installed tools like MongoSH if you have them installed or use the  MongoDB Kafka Tutorial image.  This image contains tools like MongoSH, KafkaCat and other utilities.
+ 
+
+```docker run --rm --name shell1 --network kafka-edu_localnet -it mongokafkatutorial:latest bash```
+
+
+## Shutting down the Docker environment
+
+  
+
+The Docker environment can be stopped using
+
+`docker-compose down`
+
+  
+
+If you would like to drop the MongoDB databases as well as shutdown use
+
+`docker-compose down -v`
+
+  
+
+To start the environment again just execute the `run.sh` shell script
+
+`sh run.sh`
+
+> Note: If you are using a Windows OS, execute the `run.ps1` script a Powershell environment.
 
 # Quick start data streaming guide:
 
@@ -101,6 +148,14 @@ The following contains the basic configuration properties you are going to need 
 ```curl -s "http://localhost:8083/connectors?expand=info&expand=status"```
 
 Note: replace connector names with the applicable name for the connector you wish to load or delete.
+
+## References
+
+  
+
+- [MongoDB Kafka Connector](https://docs.mongodb.com/kafka-connector/current/) online documentation.
+
+- [Connectors to Kafka](https://docs.confluent.io/home/connect/overview.html)
 
 ### Troubleshooting 
 
