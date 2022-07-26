@@ -15,7 +15,7 @@ In this section you can find all the source code for our data streaming project 
 
 ***Sink connector*** - Defines the destination of data collected through Kafka.
 
-In the sub-folder [Readme](https://https://github.com/mongodb-industry-solutions/smart-factory/tree/main/shopfloor-data-integration/mongodb-kafka-base), you will find the necessary commands to deploy the docker container which has the Kafka environment.
+In the sub-folder [Readme](https://github.com/mongodb-industry-solutions/smart-factory/tree/main/shopfloor-data-integration/mongodb-kafka-base), you will find the necessary commands to deploy the docker container which has the Kafka environment.
 
 
 
@@ -23,7 +23,7 @@ In the sub-folder [Readme](https://https://github.com/mongodb-industry-solutions
 
 <br/>
 
-1. Navigate to the [mongodb-kafka-base](https://https://github.com/mongodb-industry-solutions/smart-factory/tree/main/shopfloor-data-integration/mongodb-kafka-base) folder
+1. Navigate to the [mongodb-kafka-base](https://github.com/mongodb-industry-solutions/smart-factory/tree/main/shopfloor-data-integration/mongodb-kafka-base) folder
 
 ```cd mongodb-kafka-base```
 
