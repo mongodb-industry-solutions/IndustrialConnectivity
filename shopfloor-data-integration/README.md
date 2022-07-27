@@ -16,26 +16,19 @@ The MongoDB Kafka tutorial environment requires the following installed on your 
 
 - [Docker](https://docs.docker.com/get-docker/)
 
-The docker compose in this repository will create an environment that consists of the following:
+Or simply run the following command in your terminal depending on your operating system.
 
-- Apache Kafka
-- Zookeeper
-- Apache Kafka Connect
-- MongoDB Connector for Apache Kafka (installed in Kafka Connect)
-- MongoDB single node replica set
+```sudo apt-get install docker``` or ```sudo yarn install docker```
 
-### MQTT Bridge
+### MQTT Broker
 
 An MQTT bridge lets you connect two MQTT brokers together.
 
 >  Note : You must already have a remote broker connected to some devices via a bridge and have access details for that broker in order for this source code to work.
 
-To find a tutorial on how to set up an MQTT bridge:
-
-- [Bridge Tutorial](https://github.com/mongodb-industry-solutions/smart-factory/blob/main/web-portal/MQTT_Bridge_Configuration.md)
+To find a tutorial on how to set up an MQTT bridge: [Bridge Tutorial](https://github.com/mongodb-industry-solutions/smart-factory/blob/main/web-portal/MQTT_Bridge_Configuration.md)
 
   
-
 # Starting the Docker environment
 
   
@@ -150,11 +143,11 @@ The following contains the basic configuration properties you are going to need 
 ```
 
 ## Useful Commands for Kafka Connect
-- Load a connector:
+- Load a connector:<br/>
 ```curl --silent -X POST -H "Content-Type: application/json" -d @mqtt-source.json http://localhost:8083/connectors```
-- Delete a connector:
+- Delete a connector:<br/>
 ```curl -X DELETE http://localhost:8083/connectors/mqtt-source```
-- Check connector status:
+- Check connector status:<br/>
 ```curl -s "http://localhost:8083/connectors?expand=info&expand=status"```
 
 Note: replace connector names with the applicable name for the connector you wish to load or delete.
@@ -169,14 +162,9 @@ Note: replace connector names with the applicable name for the connector you wis
 
 ### Troubleshooting 
 
-- Create Confluent License topic
+- Create Confluent License topic to successfully execute the MQTT source connector by Confluent when using the trial license with the configuration {"confluent.license": ""}
     - Connect to Zookeeper container
-    - Run this command
+    - Run this command<br/>
  ```kafka-topics --create --topic "_confluent-command" --bootstrap-server broker:9092```
+ 
 
-   <br/>
-
-
-- In the Mqtt-source connector, bootstrap server = broker:9092
-
-- In the docker compose file, cp-kafka, we change Kafka Advertised listener to both broker:29092 and broker:9092
