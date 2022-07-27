@@ -136,7 +136,7 @@ The following contains the basic configuration properties you are going to need 
 "timeseries.timefield.auto.convert.date.format":"yyyy-MM-dd'T'HH:mm:ss'Z'",
 "transforms": "RenameField,InsertTopic",
 "transforms.RenameField.type": "org.apache.kafka.connect.transforms.ReplaceField$Value",
-"transforms.RenameField.renames": "h:humidity, p:pressure, t:temperature”,
+"transforms.RenameField.renames": "h:humidity, p:pressure, t:temperature",
 "transforms.InsertTopic.type":"org.apache.kafka.connect.transforms.InsertField$Value",
 "transforms.InsertTopic.topic.field":"Source_topic"
 }}

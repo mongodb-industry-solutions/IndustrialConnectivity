@@ -1,0 +1,16 @@
+{ "name": "mqtt-source",
+"config": {
+"connector.class": "io.confluent.connect.mqtt.MqttSourceConnector",
+"tasks.max": "1",
+"mqtt.server.uri": "ssl://<REMOTE BROKER ADDRESS>:8883",
+"mqtt.username": "<REMOTE BROKER CLIENT>",
+"mqtt.password": "<REMOTE BROKER CLIENT PASSWORD>",
+"mqtt.topics": "i/ldr,i/bme680,i/cam",
+"kafka.topic": "test_topic",
+"value.converter":"org.apache.kafka.connect.converters.ByteArrayConverter",
+"confluent.topic.bootstrap.servers": "broker:9092",
+"confluent.license": "",
+"topic.creation.enable": true,
+"topic.creation.default.replication.factor": -1,
+"topic.creation.default.partitions": -1 
+}} 
