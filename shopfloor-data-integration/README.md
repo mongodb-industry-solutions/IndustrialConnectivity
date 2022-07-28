@@ -20,14 +20,13 @@ Or simply run the following command in your terminal depending on your operating
 
 ```sudo apt-get install docker``` or ```sudo yarn install docker```
 
-### MQTT Broker
+### MQTT Bridge (optional)
 
-An MQTT bridge lets you connect two MQTT brokers together.
+An MQTT bridge lets you connect two MQTT brokers together. We used this to connect our Fischertechnik factory to the cloud. If you have direct access to your MQTT broker you can skip this step.
 
->  Note : You must already have a remote broker connected to some devices via a bridge and have access details for that broker in order for this source code to work.
+[MQTT Bridge How To](http://www.steves-internet-guide.com/mosquitto-bridge-configuration/)
 
-To find a tutorial on how to set up an MQTT bridge: [Bridge Tutorial](https://github.com/mongodb-industry-solutions/smart-factory/blob/main/web-portal/MQTT_Bridge_Configuration.md)
-
+[Fischertechnik MQTT Bridge Configuration](https://github.com/mongodb-industry-solutions/smart-factory/blob/main/web-portal/MQTT_Bridge_Configuration.md)
   
 # Starting the Docker environment
 
