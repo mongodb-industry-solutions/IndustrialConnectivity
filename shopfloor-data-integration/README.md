@@ -91,7 +91,7 @@ To start the environment again just execute the `run.sh` shell script
 
 5. Add the relevant configurations from the next section into your source and sink connector files.
 
-## Sample MQTT Source Connector
+## MQTT Source Connector Configuration
 
 The following contains the basic configuration properties you are going to need for your MQTT source connector. This connector is developed by Confluent and you can see the full documentation [here](https://docs.confluent.io/kafka-connect-mqtt/current/mqtt-source-connector/mqtt_source_connector_config.html).
 
@@ -114,9 +114,9 @@ The following contains the basic configuration properties you are going to need 
 }} 
 ```
 
-## Sample MongoDB Sink Connector
+## MongoDB Sink Connector Configuration
 
-The following contains the basic configuration properties you are going to need for your MongoDB Sink connector. This connector is developed by MongoDB and you can see the full documentation here.
+The following contains the basic configuration properties you are going to need for your MongoDB Sink connector. This connector is developed by MongoDB and you can see the full documentation [here](https://www.mongodb.com/docs/kafka-connector/current/).
 
 ```
 { "name": "mongodb-sink",
