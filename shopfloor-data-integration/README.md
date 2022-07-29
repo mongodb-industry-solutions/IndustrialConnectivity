@@ -91,6 +91,8 @@ To start the environment again just execute the `run.sh` shell script
 
 ```nano mongodb-sink.json```
 
+> Note: Change the connection.uri, database and collection values to match with your desire configuration.
+
 5. Add the relevant configurations from the next section into your source and sink connector files.
 
 ## MQTT Source Connector Configuration
