@@ -85,13 +85,13 @@ To start the environment again just execute the `run.sh` shell script
 
 ```nano mqtt-source.json```
 
-> Note: Change the mqtt.server.uri, the mqtt.username and mqtt.password values to match with your desire configuration.
+> Note: Change the ***mqtt.server.uri***, the ***mqtt.username*** and ***mqtt.password*** values to match with your desire configuration.
 
 4. Open the sink connector JSON file
 
 ```nano mongodb-sink.json```
 
-> Note: Change the connection.uri, database and collection values to match with your desire configuration.
+> Note: Change the ***connection.uri***, ***database*** and ***collection*** values to match with your desire configuration.
 
 5. Add the relevant configurations from the next section into your source and sink connector files.
 
