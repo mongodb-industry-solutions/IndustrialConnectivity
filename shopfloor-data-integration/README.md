@@ -93,8 +93,6 @@ To start the environment again just execute the `run.sh` shell script
 
 > Note: Change the ***connection.uri***, ***database*** and ***collection*** values to match with your desire configuration.
 
-5. Add the relevant configurations from the next section into your source and sink connector files.
-
 ## MQTT Source Connector Configuration
 
 The following contains the basic configuration properties you are going to need for your MQTT source connector. This connector is developed by Confluent and you can see the full documentation [here](https://docs.confluent.io/kafka-connect-mqtt/current/mqtt-source-connector/mqtt_source_connector_config.html).
@@ -117,6 +115,8 @@ The following contains the basic configuration properties you are going to need 
 "topic.creation.default.partitions": -1 
 }} 
 ```
+
+>Note: You can modify or add any values to match with your desire configuration for example:  ***mqtt.topics***,***kafka.topic***,etc.
 
 ## MongoDB Sink Connector Configuration
 
@@ -145,6 +145,10 @@ The following contains the basic configuration properties you are going to need 
 }}
 ```
 
+>Note: You can modify or add any values to match with your desire configuration for example: ***transforms*** and more.
+
+> ***IMPORTANT: If you want to add more than one transform you should add the name of the transform to the same key for it to work.(Check the Sink Configuration code above)***
+
 ## Useful Commands for Kafka Connect
 - Load a connector:<br/>
 ```curl --silent -X POST -H "Content-Type: application/json" -d @mqtt-source.json http://localhost:8083/connectors```
@@ -162,6 +166,8 @@ Note: replace connector names with the applicable name for the connector you wis
 - [MongoDB Kafka Connector](https://docs.mongodb.com/kafka-connector/current/) online documentation.
 
 - [Connectors to Kafka](https://docs.confluent.io/home/connect/overview.html)
+
+- [Transforms Confluent](https://docs.confluent.io/platform/current/connect/transforms/overview.html)
 
 ### Troubleshooting 
 
