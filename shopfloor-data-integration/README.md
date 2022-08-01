@@ -28,7 +28,9 @@ An MQTT bridge lets you connect two MQTT brokers together. We used this to conne
 
 [Fischertechnik MQTT Bridge Configuration](https://github.com/mongodb-industry-solutions/smart-factory/blob/main/web-portal/MQTT_Bridge_Configuration.md)
   
-# Starting the Docker environment
+# Starting and Stopping the Docker environment
+
+### Starting the Docker environment
 
   
 
@@ -46,10 +48,7 @@ Once the environment is running, you can use locally installed tools like MongoS
 
 ```docker run --rm --name shell1 --network kafka-edu_localnet -it mongokafkatutorial:latest bash```
 
-
-## Shutting down the Docker environment
-
-  
+### Stopping the Docker environment
 
 The Docker environment can be stopped using
 
@@ -57,7 +56,7 @@ The Docker environment can be stopped using
 
   
 
-If you would like to drop the MongoDB databases as well as shutdown use
+The Docker envrionmnet can be stopped and remove named volumes like the MongoDB databases using
 
 `docker-compose down -v`
 
@@ -85,13 +84,13 @@ To start the environment again just execute the `run.sh` shell script
 
 ```nano mqtt-source.json```
 
-> Note: Change the ***mqtt.server.uri***, the ***mqtt.username*** and ***mqtt.password*** values to match with your desire configuration.
+> Note: Change the ***mqtt.server.uri***, the ***mqtt.username*** and ***mqtt.password*** values to match with your desired configuration.
 
 4. Open the sink connector JSON file
 
 ```nano mongodb-sink.json```
 
-> Note: Change the ***connection.uri***, ***database*** and ***collection*** values to match with your desire configuration.
+> Note: Change the ***connection.uri***, ***database*** and ***collection*** values to match with your desired configuration.
 
 ## MQTT Source Connector Configuration
 
@@ -116,7 +115,7 @@ The following contains the basic configuration properties you are going to need 
 }} 
 ```
 
->Note: You can modify or add any values to match with your desire configuration for example:  ***mqtt.topics***,***kafka.topic***,etc.
+>Note: You can modify or add any values to match with your desired configuration for example:  ***mqtt.topics***,***kafka.topic***,etc.
 
 ## MongoDB Sink Connector Configuration
 
@@ -145,7 +144,7 @@ The following contains the basic configuration properties you are going to need 
 }}
 ```
 
->Note: You can modify or add any values to match with your desire configuration for example: ***transforms*** and more.
+>Note: You can modify or add any values to match with your desired configuration for example: ***transforms*** and more.
 
 > ***IMPORTANT: If you want to add more than one transform you should add the name of the transform to the same key for it to work.(Check the Sink Configuration code above)***
 
@@ -169,7 +168,7 @@ Note: replace connector names with the applicable name for the connector you wis
 
 - [Transforms Confluent](https://docs.confluent.io/platform/current/connect/transforms/overview.html)
 
-### Troubleshooting 
+## Troubleshooting 
 
 - Create Confluent License topic to successfully execute the MQTT source connector by Confluent when using the trial license with the configuration {"confluent.license": ""}
     - Connect to Zookeeper container
