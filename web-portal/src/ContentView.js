@@ -102,7 +102,7 @@ function OrdersView() {
             <h1 className=" font-semibold text-center mt-15 text-3xl mt-8">Charts 📈</h1>
           </div>
           <div className="mt-5 ">
-          <Iframe className="charts" style="background: #F1F5F4;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);"  src="https://charts.mongodb.com/charts-myiot-rweli/embed/dashboards?id=62d864e9-f1eb-483b-84df-5681181812b1&theme=light&autoRefresh=true&maxDataAge=3600&showTitleAndDesc=false&scalingWidth=scale&scalingHeight=fixed"/>
+          <Iframe className="charts" style="background: #F1F5F4;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);"  src="https://charts.mongodb.com/charts-myiot-rweli/embed/dashboards?id=9415e800-2e6d-48c4-a0fc-bf75ffe8028e&theme=light&autoRefresh=true&maxDataAge=3600&showTitleAndDesc=false&scalingWidth=fixed&scalingHeight=fixed"/>
           </div>
       </div>
   ));
