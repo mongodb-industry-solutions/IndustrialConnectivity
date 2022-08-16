@@ -17,6 +17,10 @@ code {
   border: 1px solid rgb(0, 0, 0) !important;
 }
 
+.charts{
+  width: -webkit-fill-available !important;
+  height: 1000px !important;
+}
 
 
 input[value="red"]{ background-color: #ff4136 !important;}

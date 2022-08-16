@@ -9,6 +9,8 @@ import { StatusPill } from "./Components/Table";
 import { AvatarCell } from "./Components/Table";
 import { DateField } from "./Components/Table";
 import { TimeField } from "./Components/Table";
+import Iframe from 'react-iframe'
+
 
 
 export function ContentView() {
@@ -95,6 +97,12 @@ function OrdersView() {
           </div>
           <div className="mt-5">
             <Table columns={columns} data={data.neworders} />
+          </div>
+          <div className="">
+            <h1 className=" font-semibold text-center mt-15 text-3xl mt-8">Charts 📈</h1>
+          </div>
+          <div className="mt-5 ">
+          <Iframe className="charts" style="background: #F1F5F4;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);"  src="https://charts.mongodb.com/charts-myiot-rweli/embed/dashboards?id=62d864e9-f1eb-483b-84df-5681181812b1&theme=light&autoRefresh=true&maxDataAge=3600&showTitleAndDesc=false&scalingWidth=scale&scalingHeight=fixed"/>
           </div>
       </div>
   ));
