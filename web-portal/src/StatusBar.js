@@ -1,5 +1,4 @@
 import React from "react";
-import { Container, Button } from "react-bootstrap";
 
 export class StatusBar extends React.Component {
   constructor(props) {
@@ -29,15 +28,16 @@ export class StatusBar extends React.Component {
     return (
       <div>
         <hr />
-        <Container className="d-flex justify-content-end">
-          <Button
+        <div class="container mx-auto">
+          <button
             onClick={this.handleClick}
             size="sm"
             variant="outline-success"
+            className="mb-5"
           >
             Logout
-          </Button>
-        </Container>
+          </button>
+        </div>
       </div>
     );
   }

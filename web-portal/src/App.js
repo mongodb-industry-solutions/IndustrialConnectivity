@@ -1,16 +1,9 @@
-import logo from "./logo.svg";
-import React from "react";
+import logo from "./media/logo.png";
+import React, { useEffect } from "react";
 import { LoginForm } from "./LoginForm";
 import { ContentView } from "./ContentView";
 import { StatusBar } from "./StatusBar";
 import { OrderForm } from "./OrderForm";
-
-// Bootstrap
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
-import Tabs from "react-bootstrap/Tabs";
-import Tab from "react-bootstrap/Tab";
-import { Row, Col } from "react-bootstrap";
 
 // Custom CSS
 import "./App.css";
@@ -60,58 +53,61 @@ async function getValidAccessToken() {
   return app.currentUser.accessToken;
 }
 
+
 function App(props) {
   // Keep the logged in Realm user in local state. This lets the app re-render
   // whenever the current user changes (e.g. logs in or logs out).
   const [user, setUser] = React.useState(app.currentUser);
+  const [location, setLocation] = React.useState('');
+
+
+  useEffect(() => {
+    var endpoint = 'http://ip-api.com/json/?fields=status,message,country,city';
+    var xhr = new XMLHttpRequest();
+    var address = ""
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var response = JSON.parse(this.responseText);
+        if(response.status !== 'success') {
+          console.log('query failed: ' + response.message);
+          return
+        }
+        address = response.city + ", " + response.country
+        setLocation(address) 
+      }
+    };
+    xhr.open('GET', endpoint, true);
+    xhr.send();
+  });
 
   // Conditional Rendering ->> https://reactjs.org/docs/conditional-rendering.html
 
   return (
-    <div className="App">
+    <div className="App min-h-screen bg-gray-100 text-gray-900">
       <header className="App-header">
-        <Container>
-          <Row className="align-items-center">
-            <Col xs={3}>
-              <img
-                src={logo}
-                width="100"
-                height="100"
-                className="d-inline-block align-top"
-                alt="MongoDB Logo"
-              />
-            </Col>
-            <Col md="auto">
-              <div>
-                <h1>MongoDB Connected Factory</h1>
+      <div class="container mx-auto">
+            <div md="auto">
+              <div style={{display:'inline', alignItems: 'center', justifyContent: 'center',}}>
+              <div style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}}>
+                <img src={logo} style={{}} width="500" height="500" alt="MongoDB Logo"/>
+                </div>
+                <h1 style={{fontSize : '35px', textAlign: 'center'}}>Connected Factory</h1>
               </div>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+        </div>
       </header>
-      <main>
-        <Container>
+      <main className=" mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div class="container mx-auto">
           {user ? (
             <ApolloProvider client={client}>
-              <Tabs
-                fill
-                defaultActiveKey="orders"
-                id="uncontrolled-tab-example"
-                className="mb-3"
-              >
-                <Tab eventKey="orders" title="Orders">
+                  <OrderForm app={app} location={location} user={user} />
                   <ContentView />
-                </Tab>
-                <Tab eventKey="form" title="Order Form">
-                  <OrderForm app={app} />
-                </Tab>
-              </Tabs>
             </ApolloProvider>
           ) : (
             <LoginForm app={app} setUser={setUser} />
           )}
           {user ? <StatusBar app={app} setUser={setUser} /> : <div />}
-        </Container>
+          </div>
       </main>
     </div>
   );
