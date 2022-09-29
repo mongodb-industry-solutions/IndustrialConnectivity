@@ -1,9 +1,12 @@
 import logo from "./media/logo.png";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { LoginForm } from "./LoginForm";
 import { ContentView } from "./ContentView";
 import { StatusBar } from "./StatusBar";
 import { OrderForm } from "./OrderForm";
+//Tab Style 
+import styled from 'styled-components';
+
 
 // Custom CSS
 import "./App.css";
@@ -22,6 +25,29 @@ import {
 
 // Connect to your MongoDB Realm app
 const app = new Realm.App(realmAppID);
+
+//Tab Style
+const Tab = styled.button`
+  font-size: 20px;
+  padding: 10px 60px;
+  cursor: pointer;
+  opacity: 0.6;
+  background: white;
+  border: 0;
+  outline: 0;
+  ${({ active }) =>
+    active &&
+    `
+    border-bottom: 2px solid black;
+    opacity: 1;
+  `}
+`;
+const ButtonGroup = styled.div`
+  display: flex;
+`;
+const types = ['Customer Order Form', 'Factory Order Logs'];
+
+
 
 // Configure the ApolloClient to connect to your app's GraphQL endpoint
 const client = new ApolloClient({
@@ -59,6 +85,8 @@ function App(props) {
   // whenever the current user changes (e.g. logs in or logs out).
   const [user, setUser] = React.useState(app.currentUser);
   const [location, setLocation] = React.useState('');
+  const [active, setActive] = useState(types[0]);
+
 
 
   useEffect(() => {
@@ -82,6 +110,58 @@ function App(props) {
 
   // Conditional Rendering ->> https://reactjs.org/docs/conditional-rendering.html
 
+
+
+
+  return (
+          <div className="App min-h-screen bg-gray-100 text-gray-900">
+          <header className="App-header">
+            <div class="container mx-auto">
+                  <div md="auto">
+                    <div style={{display:'inline', alignItems: 'center', justifyContent: 'center',}}>
+                    <div style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}}>
+                      <img src={logo} style={{}} width="500" height="500" alt="MongoDB Logo"/>
+                      </div>
+                      <h1 style={{fontSize : '35px', textAlign: 'center'}}>Connected Factory</h1>
+                                <ButtonGroup>
+                                    {types.map(type => (
+                                      <Tab
+                                        key={type}
+                                        active={active === type}
+                                        onClick={() => setActive(type)}
+                                      >
+                                        {type}
+                                      </Tab>
+                                    ))}
+                                </ButtonGroup>
+                    </div>
+                  </div>
+              </div>
+          </header>
+        
+        <p />
+              <main className=" mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+              <div class="container mx-auto">
+                {user ? (
+                  <ApolloProvider client={client}>
+
+                    {active == "Customer Order Form"?( <OrderForm app={app} location={location} user={user} />):(<ContentView />) }
+                   
+                  </ApolloProvider>
+                ) : (
+                  <LoginForm app={app} setUser={setUser} />
+                )}
+                {user ? <StatusBar app={app} setUser={setUser} /> : <div />}
+                </div>
+            </main>
+        </div>
+  );
+
+  
+
+//Original code before tabs
+
+/*
   return (
     <div className="App min-h-screen bg-gray-100 text-gray-900">
       <header className="App-header">
@@ -100,6 +180,8 @@ function App(props) {
         <div class="container mx-auto">
           {user ? (
             <ApolloProvider client={client}>
+
+
                   <OrderForm app={app} location={location} user={user} />
                   <ContentView />
             </ApolloProvider>
@@ -111,6 +193,11 @@ function App(props) {
       </main>
     </div>
   );
+
+  */
+
+// End of Original code before Tabs
+
 }
 
 export default App;
