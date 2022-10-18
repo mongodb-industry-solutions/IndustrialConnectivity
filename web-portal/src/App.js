@@ -145,7 +145,7 @@ function App(props) {
                 {user ? (
                   <ApolloProvider client={client}>
 
-                    {active == "Customer Order Form"?( <OrderForm app={app} location={location} user={user} />):(<ContentView />) }
+                    {active == types[0]?( <OrderForm app={app} location={location} user={user} />):(<ContentView />) }
                    
                   </ApolloProvider>
                 ) : (
@@ -159,44 +159,7 @@ function App(props) {
 
   
 
-//Original code before tabs
 
-/*
-  return (
-    <div className="App min-h-screen bg-gray-100 text-gray-900">
-      <header className="App-header">
-      <div class="container mx-auto">
-            <div md="auto">
-              <div style={{display:'inline', alignItems: 'center', justifyContent: 'center',}}>
-              <div style={{alignItems: 'center', justifyContent: 'center', display: 'flex'}}>
-                <img src={logo} style={{}} width="500" height="500" alt="MongoDB Logo"/>
-                </div>
-                <h1 style={{fontSize : '35px', textAlign: 'center'}}>Connected Factory</h1>
-              </div>
-            </div>
-        </div>
-      </header>
-      <main className=" mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-        <div class="container mx-auto">
-          {user ? (
-            <ApolloProvider client={client}>
-
-
-                  <OrderForm app={app} location={location} user={user} />
-                  <ContentView />
-            </ApolloProvider>
-          ) : (
-            <LoginForm app={app} setUser={setUser} />
-          )}
-          {user ? <StatusBar app={app} setUser={setUser} /> : <div />}
-          </div>
-      </main>
-    </div>
-  );
-
-  */
-
-// End of Original code before Tabs
 
 }
 
