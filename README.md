@@ -1,4 +1,4 @@
-# Industrial Connectivity for MongoDB Cloud
+# Industrial Connectivity for Shop Floor Devices using MQTT
 This repository contains options for connecting IoT devices to the cloud and streaming data from such devices into MongoDB. It conencts the dots between your chosen public cloud provider and other fully-managed/self-managed services that you may need to get data from the shop floor. You wil find code and configuration samples leveraging MongoDB and other ecosystem technologies such as Kafka, MQTT etc.
 
 ![Reference Architecture](media/about.png?raw=true)
