@@ -4,7 +4,7 @@ This repository contains options for connecting IoT devices to the cloud and str
 ![Reference Architecture](media/about.png?raw=true)
 
 ## Self-Managed
-This option involves deploying a kafka environment in a Docker container which uses an MQTT source connector and a MongoDB sink connector interfaced with the device MQTT broker to stream data into a MongoDB Time Series collection. This setup can be deployed on-prem, on a VM or in a serverless environment.
+This option involves deploying a kafka environment in a Docker container which uses an MQTT source connector and a MongoDB sink connector interfaced with the device MQTT broker to stream data into a MongoDB Time Series collection. This setup can be deployed on-prem, on a VM or in a serverless environment.<br>
 [Use the Self-managed Setup](https://github.com/mongodb-industry-solutions/IndustrialConnectivity/tree/main/Self-managed)
 
 ## Microsoft Azure IoT Hub
