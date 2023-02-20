@@ -12,19 +12,19 @@ In this section you can find all the source code for our data streaming project 
 ### Docker
 The MongoDB Kafka tutorial environment requires [Docker](https://docs.docker.com/get-docker/) installed on your client:
 
+#### On VMs, or other environments
+Run the following command on the terminal:
+```sudo apt-get install docker``` or ```sudo yarn install docker```
 
-#### Mac
-Note that Docker might have different requierements if you are on a Mac with Apple Silicon or Intel chip. Install it according to your system.
 
-Follow [Docker's Mac installation instrucctions](https://docs.docker.com/desktop/install/mac-install/), or run:
-
+#### On Operating Systems 
+- **Mac:** Follow [Docker's Mac installation instructions](https://docs.docker.com/desktop/install/mac-install/), or run:
 ```brew install docker```
+> Note that Docker might need additional requirements if you are on a Mac with Apple Silicon or Intel chip. Install it according to your system.
 
-#### Windows
-Follow [Docker's Windows installation instrucctions](https://docs.docker.com/desktop/install/windows-install/)
+- **Windows:** Follow [Docker's Windows installation instructions](https://docs.docker.com/desktop/install/windows-install/)
 
-#### Linux
-Follow [Docker's Windows installation instrucctions](https://docs.docker.com/desktop/install/linux-install/)
+- **Linux:** Follow [Docker's Linux installation instructions](https://docs.docker.com/desktop/install/linux-install/)
 
 
 ### MQTT Bridge (optional)
@@ -49,9 +49,7 @@ And execute the shell script `run.sh`.
 
 ```sh run.sh```
 
-  
-
-> Note: If you are using a Windows OS, execute the `run.ps1` script a Powershell environment.
+If you are using a Windows OS, execute the `run.ps1` script a Powershell environment.
   
 
 Once the environment is running, you can use locally installed tools like MongoSH if you have them installed or use the  MongoDB Kafka Tutorial image.  This image contains tools like MongoSH, KafkaCat and other utilities.
@@ -67,7 +65,7 @@ The Docker environment can be stopped using
 
   
 
-The Docker envrionmnet can be stopped and remove named volumes like the MongoDB databases using
+The Docker environment can be stopped and remove named volumes like the MongoDB databases using
 
 `docker-compose down -v`
 
@@ -95,13 +93,13 @@ To start the environment again just execute the `run.sh` shell script
 
 ```nano mqtt-source.json```
 
-> Note: Change the ***mqtt.server.uri***, the ***mqtt.username*** and ***mqtt.password*** values to match with your desired configuration.
+> Note: Change the ***mqtt.server.uri***, the ***mqtt.username*** and ***mqtt.password*** values to match your desired configuration.
 
 4. Open the sink connector JSON file
 
 ```nano mongodb-sink.json```
 
-> Note: Change the ***connection.uri***, ***database*** and ***collection*** values to match with your desired configuration.
+> Note: Change the ***connection.uri***, ***database*** and ***collection*** values to match your desired configuration.
 
 ## MQTT Source Connector Configuration
 
@@ -126,7 +124,7 @@ The following contains the basic configuration properties you are going to need 
 }} 
 ```
 
->Note: You can modify or add any values to match with your desired configuration for example:  ***mqtt.topics***,***kafka.topic***,etc.
+>Note: You can modify or add any values to match your desired configuration for example:  ***mqtt.topics***,***kafka.topic***,etc.
 
 ## MongoDB Sink Connector Configuration
 
@@ -155,7 +153,7 @@ The following contains the basic configuration properties you are going to need 
 }}
 ```
 
->Note: You can modify or add any values to match with your desired configuration for example: ***transforms*** and more.
+>Note: You can modify or add any values to match your desired configuration for example: ***transforms*** and more.
 
 > ***IMPORTANT: If you want to add more than one transform you should add the name of the transform to the same key for it to work.(Check the Sink Configuration code above)***
 
