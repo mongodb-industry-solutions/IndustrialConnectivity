@@ -9,16 +9,23 @@ In this section you can find all the source code for our data streaming project 
 
 
 # Prerequisites
+### Docker
+The MongoDB Kafka tutorial environment requires [Docker](https://docs.docker.com/get-docker/) installed on your client:
 
-  
 
-The MongoDB Kafka tutorial environment requires the following installed on your client:
+#### Mac
+Note that Docker might have different requierements if you are on a Mac with Apple Silicon or Intel chip. Install it according to your system.
 
-- [Docker](https://docs.docker.com/get-docker/)
+Follow [Docker's Mac installation instrucctions](https://docs.docker.com/desktop/install/mac-install/), or run:
 
-Or simply run the following command in your terminal depending on your operating system.
+```brew install docker```
 
-```sudo apt-get install docker``` or ```sudo yarn install docker```
+#### Windows
+Follow [Docker's Windows installation instrucctions](https://docs.docker.com/desktop/install/windows-install/)
+
+#### Linux
+Follow [Docker's Windows installation instrucctions](https://docs.docker.com/desktop/install/linux-install/)
+
 
 ### MQTT Bridge (optional)
 
@@ -34,7 +41,11 @@ An MQTT bridge lets you connect two MQTT brokers together. We used this to conne
 
   
 
-To start the baseline tutorial environment execute the shell script `run.sh`.
+To start the baseline tutorial environment, navigate to `/Self-managed/mongodb-kafka-base`:
+
+```cd Self-managed/mongodb-kafka-base```
+
+And execute the shell script `run.sh`.
 
 ```sh run.sh```
 
